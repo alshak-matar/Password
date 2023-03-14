@@ -2,7 +2,7 @@ import re
 import hashlib 
 
 
-print(" 🤩 Hello, for a valid password, you need at least:")
+print(" 🤩 Hello, for valid password, you need at least:")
 print(" 👉 8 characters an uppercase letter and lowercase letter ")
 print( " 👉 Number and special character ( %, ^, &, *, !, @, #, $)")
 
@@ -10,7 +10,7 @@ specials_characters = [ "$", "%", "^", "&", "*", "!", "@", "#" ]
 
 while True: 
     passm = input("Enter your Password : ")
-    if len(passm) <=8:
+    if len(passm) < 8:
         print("Invalid 8 characters minimum please try again")
     elif passm == passm.upper():                                    
         print("Invalid At least one lowercase letter please try again")
