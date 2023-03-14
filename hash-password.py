@@ -1,18 +1,25 @@
-import hashlib
+import re
+import hashlib 
 
-def hash_password(password, salt):
-    salted_password = password + salt
+specials_characters = [ "$", "%", "^", "&", "*", "!", "@", "#" ]
+print(" 🤩 Hello, for a valid password, you need at least:")
+print(" 👉 8 characters an uppercase letter and lowercase letter ")
+print( " 👉 Number and special character ( %, ^, &, *, !, @, #, $)")
 
-    encoded_password = salted_password.encode('utf-8')
-
-    sha256_hash = hashlib.sha256(encoded_password)
-
-    hashed_password = sha256_hash.hexdigest()
-
-    return hashed_password
-password = "my_password"
-salt = "salty_salt"
-
-hashed_password = hash_password(password, salt)
-
-print(hashed_password)
+while True: 
+    passm = input("Enter your Password : ")
+    if len(passm) <=8:
+        print("Invalid 8 characters minimum please try again")
+    elif passm == passm.upper():                                    
+        print("Invalid At least one lowercase letter please try again")
+    elif not re.search("[0-9]", passm):                         
+        print("Invalid At least one number please try again")
+    elif passm== passm.lower():                                   
+        print("Invalid At least one capital letter please try again")
+    elif not any(char in specials_characters for char in passm):
+        print("Invalid At least one special character please try again") 
+    else : 
+        print("Valid password good job") 
+        break
+psassword=hashlib.sha256(passm.encode('utf-8')).hexdigest()
+print("Here is your encrypted password: ", psassword)
