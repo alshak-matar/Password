@@ -21,5 +21,5 @@ while True:
     else : 
         print("Valid password good job") 
         break
-psassword=hashlib.sha256(passm.encode('utf-8')).hexdigest()
-print("Here is your encrypted password: ", psassword)
+password=hashlib.sha256(passm.encode('utf-8')).hexdigest()
+print("Here is your encrypted password: ", password)
