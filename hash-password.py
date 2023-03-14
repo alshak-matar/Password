@@ -18,7 +18,7 @@ while True:
         print("Invalid At least one number please try again")
     elif passm== passm.lower():                                   
         print("Invalid At least one capital letter please try again")
-    elif not any(char in specials_characters for char in passm):
+    elif not any(character in specials_characters for character in passm):
         print("Invalid At least one special character please try again") 
     else : 
         print("Valid password good job") 
